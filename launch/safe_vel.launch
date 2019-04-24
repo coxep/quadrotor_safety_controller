@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+  <node pkg="safe_vel" type="safe_vel_node" name="safe_vel" output="screen">
+    <param name="robot_radius" value="0.4"/>
+    <param name="active_radius" value="1.0"/>
+    <param name="passive_radius" value="3.0"/>
+    <param name="robot_buffer" value="2.0"/>
+    <param name="publish_profiles" value="true"/>
+    <param name="pub_topic" value="cmd_vel"/>
+    <param name="sub_topic" value="req_vel"/>
+    <param name="max_vel" value="1.5"/>
+    <param name="max_push_vel" value="0.5"/>
+    <param name="number_of_robots" value="2"/>
+    <param name="robot_name" value="quadrotor1"/>
+    <param name="number_of_robots" value="2"/>
+    <rosparam subst_value="true">
+      robots: [quadrotor1, quadrotor2]
+    </rosparam>
+    <param name="robot_id" value="1"/>
+    <param name="num_meas_rays" value="80"/>
+  </node>
+</launch>
